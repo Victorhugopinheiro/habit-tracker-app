@@ -126,7 +126,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const signOut = async () => {
         setIsLoading(true)
         try {
-            await account.deleteSession('current')
+            await account.deleteSession({sessionId: 'current'})
             setUser(null)
         } catch (error) {
             if (error instanceof Error) {

@@ -1,3 +1,4 @@
+import { AppWriteFuncProvider } from "@/context/appWriteFunc";
 import { AuthProvider } from "@/context/authUser";
 import { Stack } from "expo-router";
 
@@ -11,11 +12,13 @@ export default function RootLayout() {
 
 
     <AuthProvider>
-      <Stack >
+      <AppWriteFuncProvider>
+        <Stack >
 
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
 
-      </Stack>
+        </Stack>
+      </AppWriteFuncProvider>
     </AuthProvider>
   )
 }
